@@ -1,8 +1,3 @@
-//c = 2 * pi * r
-//r1 = 200mm, c1 = 1256.64 mm
-//r2 = 363mm, c2 = 2280.8 mm
-//c2/c1 = 1.815
-
 #include <Romi32U4.h>
 #include <PololuRPiSlave.h>
 
@@ -32,9 +27,7 @@ void loop() {
 
   _DEBUG_PID_CONTROL();
   // put your main code here, to run repeatedly:
-  int speed = 100;
-  driveCircle(100);
-  delay(500);
+  rightAngle();
   if (everyNmillisec(10)) {
     // ODOMETRY
     calculateOdom();
@@ -43,12 +36,27 @@ void loop() {
 
 }
 
-void driveCircle(int speed){
-  // Run drive forward.
-  ledGreen(1); //set so i can see it's running this code
-  motors.setLeftSpeed(speed+left_trim); //take the input speed, hardcoded at 100
-  motors.setRightSpeed((speed+right_trim) * 1.815); //drive the outside tire at the correct gear ratio
-  delay(4000);  // run long enough to go in a circle
-  motors.setSpeeds(0,0); // shut off motors
-  ledGreen(0); //shut off led while idle
+void rightAngle(){
+  // Drive forward.
+  ledGreen(1);
+  for (int speed = 0; speed <= 300; speed++)
+  {
+    motors.setSpeeds(speed+left_trim,speed+right_trim);
+    delay(2);
+  }
+  for (int speed = 300; speed >= 0; speed--)
+  {
+    motors.setSpeeds(speed+left_trim,speed+right_trim);
+    delay(2);
+  }
+  ledGreen(0);
+  
+  ledRed(1);
+  // Turn 90 degrees left.
+  motors.setLeftSpeed(-50+left_trim);
+  motors.setRightSpeed(50+right_trim);
+  delay(1050);
+  motors.setLeftSpeed(0);
+  motors.setRightSpeed(0);
+  ledRed(0);
 }
