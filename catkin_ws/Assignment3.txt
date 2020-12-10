@@ -1,0 +1,18 @@
+Video link:
+https://youtu.be/RzaB1ImwNjM
+
+Process of completing assignment 3:
+
+Ros installed, either a pre-installed image or install from source.
+Install Rosdep
+Create a catkin workspace
+Catkin_make in the catkin workspace. This will create a src/ directory
+in the src/ directory, download the code from the provided github. Return to the workspace directory
+run rosdep install --from-paths src --ignore-src -r -y, which will install all packages and find any dependencies that your package may be missing
+
+At this point, the roslaunch commands from the homework assignment should work
+
+My issues mainly stemmed from a missing msg module from std_msgs. The code would execute but would crash when trying to import the msg module. I added the message_generation package and common_msgs package
+ but the module was unfound in those packages.
+
+

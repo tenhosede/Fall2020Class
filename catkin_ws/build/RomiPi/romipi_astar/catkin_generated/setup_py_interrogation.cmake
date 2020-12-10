@@ -1,0 +1,7 @@
+set(romipi_astar_SETUP_PY_SETUP_MODULE "distutils.core")
+set(romipi_astar_SETUP_PY_VERSION "0.0.0")
+set(romipi_astar_SETUP_PY_SCRIPTS "")
+set(romipi_astar_SETUP_PY_PACKAGES "romipi_astar")
+set(romipi_astar_SETUP_PY_PACKAGE_DIRS "src/romipi_astar")
+set(romipi_astar_SETUP_PY_MODULES "")
+set(romipi_astar_SETUP_PY_MODULE_DIRS "")

@@ -1,0 +1,8 @@
+prefix=/home/pi/catkin_ws/devel
+
+Name: romipi_teleop
+Description: Description of romipi_teleop
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rospy geometry_msgs

@@ -1,0 +1,2 @@
+RomiPi/romipi_astar:RomiPi/romipi_bringup:RomiPi/romipi_description:RomiPi/romipi_fake:RomiPi/romipi_fiducials:RomiPi/romipi_gazebo:RomiPi/romipi_i2c:RomiPi/romipi_msgs:RomiPi/romipi_simulations:RomiPi/romipi_teleop:message_generation
+-DCATKIN_DEVEL_PREFIX=/home/pi/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/pi/catkin_ws/install -G Unix Makefiles
